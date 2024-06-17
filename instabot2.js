@@ -32,7 +32,8 @@ async function logCookies(){
 }
 if(!fs.existsSync("cookies.json")){
 await logCookies()
-}
+}else{
+
 const cookies = JSON.parse(fs.readFileSync('cookies.json', 'utf-8'));
   await page.setCookie(...cookies);
 await page.goto("https://instagram.com/direct/inbox")
@@ -100,6 +101,7 @@ if(currentValue.startsWith(ai)){
     
 await checkForChanges();
         }
+}
 }
 }
 standBy()
